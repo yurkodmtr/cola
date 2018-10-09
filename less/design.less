@@ -1,0 +1,55 @@
+@import "RESET.less";
+@import "elements.less";
+
+body { 
+    .box-sizing(@sizing: border-box);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    * {
+        .box-sizing(@sizing: border-box);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    *:focus {
+        outline: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    button {
+        border:none;
+        outline:none;
+    }
+}
+
+.clear {
+  clear: both;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+._show {
+    display:block!important;
+}
+._hide {
+    display:none!important;
+}
+
+@media screen and (max-width: 1450px) and (min-width: 980px) {
+
+}
+
+@media screen and (max-width: 979px) and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+
+
