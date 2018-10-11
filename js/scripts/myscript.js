@@ -2,6 +2,11 @@
 
 var myFunc = function(){
 
+	var heightFix = function(){
+		var h = window.innerHeight;
+		$('.loader').css('min-height',h+'px');
+	}	 
+
 	var anim = function(){
 		var animation = setInterval( moveSprite,50);
 		var index=0;
@@ -13,8 +18,7 @@ var myFunc = function(){
 		    if(index === 150){
 		        clearInterval(animation);
 		        if ( $('.anim').is(':visible')) {
-		        	$('body').removeClass('body_loader');
-		        	$('.loader').hide();
+		        	//$('.loader').hide();
 		        }		        
 		    }
 		}
@@ -39,15 +43,18 @@ var myFunc = function(){
 		}, 5500);
 		setTimeout(function(){
 			if ( $('.anim_text').is(':visible')) {
-				$('body').removeClass('body_loader');
-				$('.loader').hide();
+				//$('.loader').hide();
 			}			
 		}, 7000);
 		
 	}
 
 	$(document).ready(function(){
+		heightFix();
+	});
 
+	$(window).resize(function(){
+		heightFix();
 	});
 
 	$(window).load(function(){
