@@ -5,6 +5,7 @@ var myFunc = function(){
 	var heightFix = function(){
 		var h = window.innerHeight;
 		$('.loader').css('min-height',h+'px');
+		$('.container').css('min-height',h+'px');
 	}	 
 
 	var anim = function(){
