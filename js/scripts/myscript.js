@@ -51,7 +51,7 @@ var myFunc = function(){
 		    if(index === 150){
 		        clearInterval(animation);
 		        if ( $('.anim').is(':visible')) {
-		        	//afterLoader();
+		        	afterLoader();
 		        }		        
 		    }
 		}
@@ -76,7 +76,7 @@ var myFunc = function(){
 		}, 5500);
 		setTimeout(function(){
 			if ( $('.anim_text').is(':visible')) {
-				//afterLoader();
+				afterLoader();
 			}			
 		}, 7000);
 		
