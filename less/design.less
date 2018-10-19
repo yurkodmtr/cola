@@ -88,7 +88,6 @@ body {
 .loader {
     width:100%;
     height:100%;
-    // min-height:100vh;
     padding:50px;
     .flex-display(@display: flex);
     .align-content(@align: stretch);
@@ -125,6 +124,9 @@ body {
             text-align:center;            
             img {
                 display:inline-block;
+                @media screen and (max-width: 1450px) and (min-width: 600px) {
+                    width:120px;
+                }
                 @media screen and (max-width: 599px) {
                     width:90px;
                 }
@@ -139,7 +141,7 @@ body {
             font-family: 'you20133';
             text-align:center;
             @media screen and (max-width: 1450px) and (min-width: 1024px) {
-                font-size:86px;
+                font-size:66px;
             }
             @media screen and (max-width: 1023px) and (min-width: 600px) {
                 font-size:56px;
@@ -217,8 +219,8 @@ body {
                 bottom:-17px;
             }        
             .tablet_bottle {
-                width:160px;
-                height:252px; 
+                width:125px;
+                height:264px; 
                 display:block;
                 @media screen and (max-width: 599px) {
                     display:none;
@@ -276,19 +278,19 @@ body {
             .flex-display(@display: flex);            
             &__text {
                 .align-self(@align: flex-end);
-                width:540px;
+                //width:540px;
                 padding:20px;
                 color:#FFF;
-                font-size:14px;
-                line-height:18px;
-                @media screen and (max-width: 1450px) and (min-width: 768px) {
-                    width:280px;
+                font-size:8px;
+                line-height:12px;
+                @media screen and (max-width: 1450px) and (min-width: 768px) {                    
                     padding:15px;
                 }
+                @media screen and (max-width: 1100px) and (min-width: 768px) {
+                    width:280px;
+                }
                 @media screen and (max-width: 767px) {
-                    width:135px;
-                    font-size:8px;
-                    line-height:12px;
+                    width:150px;
                     padding:10px;
                 }
             }            
@@ -304,11 +306,11 @@ body {
     .flex-display(@display: flex);
     .align-content(@align: stretch);
     @media screen and (max-width: 1450px) and (min-width: 600px) {
-        padding:40px;
+        padding:25px;
     }
     @media screen and (max-width: 599px) {
         padding:15px;
-    }    
+    }  
     &__bg {
         position: absolute;
         left: 0px;
@@ -329,7 +331,7 @@ body {
         width:100%;
         background-image: linear-gradient(135deg, #f21326 25%, #ff0f25 25%, #ff0f25 50%, #f21326 50%, #f21326 75%, #ff0f25 75%, #ff0f25 100%);
         background-size: 125px 125px;
-        &__1 {
+        &__1 {            
             padding:35px 100px 15px 100px;
             @media screen and (max-width: 768px) {
                 padding:15px;
@@ -682,6 +684,99 @@ body {
     }
 }
 
+.rotate {
+    position:relative;
+    width:100%;
+    height:100%;
+    padding:50px;
+    display:none;
+    @media screen and (max-width: 1450px) and (min-width: 600px) {
+        padding:25px;
+    }
+    @media screen and (max-width: 599px) {
+        padding:15px;
+    }    
+    &__bg {
+        display:none;
+        position: absolute;
+        left: 0px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height:100%;
+        z-index: -1;
+        background: linear-gradient(-45deg, #ff0f25 12.5%, #005a2a 12.5%, #005a2a 25%, #ff0f25 25%, #ff0f25 37.5%, #be2328 37.5%, #be2328 50%, #ff0f25 50%, #ff0f25 62.5%, #005a2a 62.5%, #005a2a 75%, #ff0f25 75%, #ff0f25 87.5%, #be2328 87.5%,  #be2328);
+        background-size:250px 250px;       
+    }
+    &__content {
+        position:relative;
+        z-index:1;        
+        width:100%;
+        background-image: linear-gradient(135deg, #f21326 25%, #ff0f25 25%, #ff0f25 50%, #f21326 50%, #f21326 75%, #ff0f25 75%, #ff0f25 100%);
+        background-size: 125px 125px;
+        .flex-display(@display: flex);
+        .align-content(@align: stretch);
+        .flex-wrap(@wrap: wrap);        
+        &__3 {            
+            padding:25px;
+            @media screen and (max-width: 767px) {
+                padding:15px;
+            }
+            .rotate_inner {
+                .align-self(@align: center);
+            }
+            figure {
+                margin-bottom:60px;
+                @media screen and (max-width: 767px) {
+                    margin-bottom:20px;
+                    img {
+                        display:inline-block;
+                        width:62px;
+                    }
+                }
+            }
+            h1 {
+                width:100%;
+                font-size:48px;
+                line-height:54px;
+                color:#FFF;
+                font-family: 'you20133';
+                @media screen and (max-width: 767px) {
+                    font-size:20px;
+                    line-height:26px;
+                }
+            }
+        }
+    }
+}
+
+.device {
+    .loader {
+        @media screen and (orientation: landscape) and (max-width: 1024px) {
+            display:none;
+            // &.video {
+            //     display:block;
+            // }
+        }         
+    }
+    .container {
+        @media screen and (orientation: landscape) and (max-width: 1024px) {
+            display:none;
+        }   
+    }
+    .rotate {
+        @media screen and (orientation: landscape) and (max-width: 1024px) {
+            .flex-display(@display: flex);
+            .align-content(@align: stretch);    
+        } 
+        &__bg {
+            @media screen and (orientation: landscape) and (max-width: 1024px) {
+                display:block;
+            }     
+        }       
+    }
+}
+
 .monatik1 {
     position:fixed;
     z-index:2;
@@ -710,6 +805,7 @@ body {
     top:0px;
     width:100%;
     height:100%;
+    z-index:2;
     iframe {
         display:none;
         position:absolute;

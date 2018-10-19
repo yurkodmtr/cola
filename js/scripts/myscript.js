@@ -2,12 +2,27 @@
 
 var myFunc = function(){
 
+	var afterLoaderFlag = 0;
+
+	var deviceDetect = function(){
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			$('body').addClass('device');
+		}
+	}
+
+	
+
 	var randomVideo = function(){
 		if ( $('.video_container').length > 0 ) {
-			$('.video_container').removeClass('_hide');
 			var count = $('.video_container iframe').length;
 			var random = Math.floor(Math.random()*count);
 			$(".video_container iframe").eq(random).show();
+		}
+	}
+
+	var videoInit = function(){
+		if ( $('.video_container').length > 0 ) {
+			$('.video_container').removeClass('_hide');
 		}
 	}
 
@@ -27,6 +42,9 @@ var myFunc = function(){
 		var h = window.innerHeight;
 		$('.loader').css('min-height',h+'px');
 		$('.container').css('min-height',h+'px');
+		if ( $('.rotate').length > 0 ) {
+			$('.rotate').css('min-height',h+'px');
+		}		
 	}	 
 
 	var afterLoader = function(){
@@ -37,7 +55,7 @@ var myFunc = function(){
 		if ( $('.monatik_img').length > 0 ) {
 			$('.monatik_img').removeClass('_hide');
 		} 
-		randomVideo();
+		videoInit();
 	}
 
 	var anim = function(){
@@ -48,11 +66,16 @@ var myFunc = function(){
 			$('.anim img:nth-child('+index+')').removeClass('act');	   
 			$('.anim img:nth-child('+nextSlide+')').addClass('act');					
 		    index++;
-		    if(index === 150){
+		    if(index === 150){		    	
 		        clearInterval(animation);
-		        if ( $('.anim').is(':visible')) {
+		        if ( $('.anim').is(':visible') && !$('.anim_text').is(':visible')) {
 		        	afterLoader();
-		        }		        
+		        } else {
+		        	if ( afterLoaderFlag === 0 ) {
+		        		afterLoaderFlag = 1;
+		        		afterLoader();
+		        	}		        	
+		        }	        
 		    }
 		}
 	}
@@ -74,15 +97,22 @@ var myFunc = function(){
 		setTimeout(function(){
 			$('.anim_text__3').removeClass('step_1').addClass('step_2');
 		}, 5500);
-		setTimeout(function(){
-			if ( $('.anim_text').is(':visible')) {
+		setTimeout(function(){			
+			if ( $('.anim_text').is(':visible') && !$('.anim').is(':visible')) {
 				afterLoader();
-			}			
+			} else {
+	        	if ( afterLoaderFlag === 0 ) {
+	        		afterLoaderFlag = 1;
+	        		afterLoader();
+	        	}
+	        } 			
 		}, 7000);
 		
 	}
 
 	$(document).ready(function(){
+		randomVideo();
+		deviceDetect();
 		heightFix();
 		player();
 	});
