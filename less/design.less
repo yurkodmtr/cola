@@ -352,56 +352,86 @@ body {
                         width:50px;
                     }
                 }
-                a {
-                    text-decoration:none;
-                    &:hover {
-                        text-decoration:underline;
-                    }
-                    text-transform:uppercase;
+                .links {
                     display:inline-block;
-                    vertical-align:top;
-                    font-size:18px;
-                    font-weight:700;
-                    color:#FFF;
                     margin:78px 0px 0px 108px;
                     @media screen and (max-width: 1450px) and (min-width: 1025px) {
                         margin-top:65px;
                     }
                     @media screen and (max-width: 1024px) and (min-width: 600px) {
-                        margin-left:0px;
                         float:right;
+                        margin-top:65px;
+                        margin-left:0px;
                     }
                     @media screen and (max-width: 599px) {
+                        float:right;
+                        margin-top:29px;
                         margin-left:0px;
-                        float:right; 
-                        font-size:10px;
-                        margin-top:32px;
+                    }
+                    a {
+                        text-decoration:none;
+                        &:hover {
+                            text-decoration:underline;
+                        }
+                        text-transform:uppercase;
+                        display:inline-block;
+                        vertical-align:top;
+                        font-size:18px;
+                        font-weight:700;
+                        color:#FFF;  
+                        margin-right:50px;
+                        &:last-child {
+                            margin-right:0px;
+                        }                  
+                        @media screen and (max-width: 599px) {
+                            margin-right:20px;
+                            font-size:10px;
+                        }
                     }
                 }
+                
             }
             h1 {
                 position:relative;
                 z-index:1;
                 width:100%;
                 font-size:74px;
-                line-height:90px;
+                line-height:76px;
                 color:#FFF;
                 font-family: 'you20133';
                 padding-bottom:20px;
+                .span_1 {
+                    display:block;
+                }
+                .span_2 {
+                    display:none;
+                }
                 @media screen and (max-width: 1600px) and (min-width: 1025px) {
                     font-size:44px;
                     line-height:46px;
-                    padding-bottom:10px;
+                    padding-bottom:10px;                    
                 }
                 @media screen and (max-width: 1024px) and (min-width: 600px) {
                     font-size:44px;
                     line-height:46px;
                     padding-bottom:10px;
+                    .span_1 {
+                        display:none;
+                    }
+                    .span_2 {
+                        display:block;
+                    }
                 }
                 @media screen and (max-width: 599px) {
                     font-size:24px;
                     line-height:32px;
                     padding-bottom:10px;
+                    .span_1 {
+                        display:block;
+                    }
+                    .span_2 {
+                        display:none;
+                    }
                 }
             }
             .app {
@@ -424,6 +454,9 @@ body {
                         line-height:34px;
                         color:#FFF;
                         margin-bottom:40px;
+                        .span_1 {
+                            display:block;
+                        }
                         @media screen and (max-width: 1600px) and (min-width: 1025px) {
                             font-size:18px;
                             line-height:22px;
@@ -433,12 +466,15 @@ body {
                             font-size:20px;
                             line-height:26px;
                             margin-bottom:20px;
-                            max-width:300px;
+                            max-width:340px;
+                            .span_1 {
+                                display:none;
+                            }
                         }
                         @media screen and (max-width: 599px) {
                             font-size:12px;
                             line-height:16px;
-                            margin-bottom:20px;
+                            margin-bottom:10px;
                             max-width:140px;
                             br {
                                 display:none;
@@ -480,20 +516,20 @@ body {
                         position:relative;
                         height:250px;
                         img {
-                            right:-190px;
+                            right:-280px;
                             position:absolute;
                             top:50%;
                             .translate(@y:-50%);
-                            margin-top:60px;
-                            max-width:300px;
+                            margin-top:42px;
+                            max-width:400px;
                         }
                     }
                     @media screen and (max-width: 599px) {
                         height:160px;
                         img {
-                            width:120px;
-                            margin-top:15px;
-                            right:-100px;
+                            width: 260px;
+                            margin-top: 71px;
+                            right: -150px;
                         }
                     }
                 }
@@ -506,19 +542,43 @@ body {
                     .align-self(@align: flex-end);
                     p {
                         color:#FFF;
-                        font-size:14px;
-                        line-height:18px;
-                        margin-bottom:10px;
+                        font-size:12px;
+                        line-height:14px;
+                        margin-bottom:5px;
                         &:last-child {
                             margin-bottom:0px;
                         }
+
                         @media screen and (max-width: 1600px) and (min-width: 600px) {
                             font-size:12px;
                             line-height:14px;
                         }
+                        @media screen and (max-width: 1024px) and (min-width: 600px) {
+                            font-size:10px;
+                            line-height:12px;
+                            &:nth-child(1) {
+                                .span_1 {
+                                    display:block;
+                                }
+                            }
+                        }
                         @media screen and (max-width: 599px) {
+                            .span_1 {
+                                display:none;
+                            }
+                            .span_2 {
+                                display:block;
+                            }
                             font-size:8px;
                             line-height:12px;
+                        }
+                        &.links {
+                            a {
+                                display:inline-block;
+                                margin-right:10px;
+                                color:#FFF;
+                                text-decoration:underline;
+                            }
                         }
                     }
                 }                    
@@ -549,7 +609,7 @@ body {
                 z-index:1;
                 padding-bottom:20px;
                 width:100%;
-                img {
+                .img {
                     display:inline-block;
                     width:120px;
                     vertical-align:top;
@@ -558,6 +618,48 @@ body {
                     }
                     @media screen and (max-width: 599px) {
                         width:50px;
+                    }
+                }
+                .links {
+                    display:inline-block;
+                    margin:78px 0px 0px 108px;
+                    @media screen and (max-width: 1450px) and (min-width: 1025px) {
+                        margin-top:65px;
+                    }
+                    @media screen and (max-width: 1024px) and (min-width: 600px) {
+                        margin-top:65px;
+                    }
+                    @media screen and (max-width: 599px) {
+                        margin-left:50px;
+                        margin-top:29px;
+                    }
+                    a {
+                        img {
+                            display:inline-block;
+                            margin-right:10px;
+                            vertical-align:middle;
+                            @media screen and (max-width: 599px) {
+                                width:35px;
+                            }
+                        }
+                        text-decoration:none;
+                        &:hover {
+                            text-decoration:underline;
+                        }
+                        text-transform:uppercase;
+                        display:inline-block;
+                        vertical-align:top;
+                        font-size:18px;
+                        font-weight:700;
+                        color:#FFF;  
+                        margin-right:50px;
+                        &:last-child {
+                            margin-right:0px;
+                        }                  
+                        @media screen and (max-width: 599px) {
+                            margin-right:20px;
+                            font-size:10px;
+                        }
                     }
                 }
             }
@@ -583,20 +685,38 @@ body {
                     font-size:24px;
                     line-height:32px;
                     padding-bottom:10px;
-                    width:140px;
+                    width:220px;
                 }
             }
             .btns {
                 width:100%;
-                margin-bottom:20px;
+                margin-bottom:20px;  
+                &__wrap {
+                    @media screen and (max-width: 599px) {
+                        width:172px;
+                    }
+                }              
                 .btn {
                     cursor:pointer;
                     display:inline-block;
-                    margin-right:20px;
+                    margin-right:50px;
                     &:last-child {
                         margin-right:0px;
                     }
                     text-align:center;
+                    @media screen and (max-width: 1024px) {
+                        margin-right:10px;
+                    }
+                    @media screen and (max-width: 599px) {
+                        &__become {
+                            margin-right:0px;
+                        }
+                        &:last-child {
+                            display:block;
+                            width:100%;
+                            margin-top:10px;
+                        }
+                    }
                     figure {
                         text-align:center;
                         margin-bottom:20px;
@@ -620,6 +740,10 @@ body {
                         line-height:24px;
                         font-weight:700;
                         text-transform:uppercase;
+                        @media screen and (max-width: 1024px) {
+                            font-size:16px;
+                            line-height:18px;
+                        }
                         br {
                             display:none;
                             @media screen and (max-width: 1024px) {
@@ -628,7 +752,7 @@ body {
                         }
                         @media screen and (max-width: 599px) {
                             font-size:10px;
-                            line-height:14px;
+                            line-height:10px;
                         }
                     }
                     &:hover {
@@ -662,9 +786,9 @@ body {
                     .align-self(@align: flex-end);
                     p {
                         color:#FFF;
-                        font-size:14px;
-                        line-height:18px;
-                        margin-bottom:10px;
+                        font-size:12px;
+                        line-height:14px;
+                        margin-bottom:5px;
                         &:last-child {
                             margin-bottom:0px;
                         }
@@ -676,6 +800,14 @@ body {
                             font-size:8px;
                             line-height:12px;
                             width:150px;
+                        }
+                        &.links {
+                            a {
+                                display:inline-block;
+                                margin-right:10px;
+                                color:#FFF;
+                                text-decoration:underline;
+                            }
                         }
                     }
                 }                    
@@ -792,7 +924,7 @@ body {
     position:fixed;
     z-index:2;
     top:0px;
-    right:-50px;
+    right:-85px;
     height:100%;
     @media screen and (max-width: 1450px) {
         display:block;

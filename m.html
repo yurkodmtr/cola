@@ -26,8 +26,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <div class="wrap">
-	<div class="loader_bg "></div>
-	<div class="loader ">
+	<div class="loader_bg _hide"></div>
+	<div class="loader _hide">
 		<div class="loader__content">
 			<figure class="logo">
 				<img src="images/loader_logo.png" alt="">
@@ -206,11 +206,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
-	<div class="container__bg _hide"></div>
-	<div class="container _hide">
+	<div class="container__bg "></div>
+	<div class="container ">
 		<div class="container__content container__content__2">
 			<div class="logo clearfix">
-				<img src="images/loader_logo.png" alt="">
+				<img src="images/loader_logo.png" alt="" class="img">
+				<div class="links">
+					<a href="#"><img src="images/back.png" alt="">Назад</a>
+				</div>
 			</div>
 			<h1>
 				#БудьСантою з Coca-Cola! <br>
@@ -219,20 +222,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</h1>
 
 			<div class="btns">
-				<audio id='player' src='mp3/track.mp3'></audio>
-				<span class="btn btn__play">
-					<figure>
-						<img src="images/play.png" alt="" class="play">
-						<img src="images/pause.png" alt="" class="pause">
-					</figure>
-					<span class="title">уВімкнути <br> трек</span>
-				</span>
-				<a href="#" class="btn">
-					<figure>
-						<img src="images/become.png" alt="">
-					</figure>
-					<span class="title">Стати Сантою <br> для друга</span>
-				</a>
+				<div class="btns__wrap">
+					<audio id='player' src='mp3/track.mp3'></audio>
+					<span class="btn btn__play">
+						<figure>
+							<img src="images/play.png" alt="" class="play">
+							<img src="images/pause.png" alt="" class="pause">
+						</figure>
+						<span class="title">уВімкнути <br> трек</span>
+					</span>
+					<a href="#" class="btn btn__become">
+						<figure>
+							<img src="images/become.png" alt="">
+						</figure>
+						<span class="title">Стати Сантою <br> для друга</span>
+					</a>
+					<a href="mp3/track.mp3" class="btn" download >
+						<figure>
+							<img src="images/download.png" alt="">
+						</figure>
+						<span class="title">Завантажити <br> трек</span>
+					</a>
+				</div>
 			</div>
 			
 			<div class="copy">
@@ -240,6 +251,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<p>
 						&copy; 2018 The Coca-Cola Company. Всі права захищені.<br>
 						COCA-COLA, COCA-COLA ZERO є зареєстрованими торговельними марками The Coca-Cola Company.
+					</p>
+					<p class="links">
+						<a href="https://www.coca-cola.ua/ua/terms-of-use/">Правила використання</a>
+						<a href="https://www.coca-cola.ua/ua/privacy-policy/">Положення про конфіденційність</a>
+						<a href="https://www.coca-cola.ua/ua/cookie-policy/">Про cookies на цьому сайтi</a>              
 					</p>
 				</div>										
 			</div>
